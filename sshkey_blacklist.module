@@ -1,0 +1,14 @@
+<?php
+
+/**
+ * Performs upgrade on blacklist. Function downloads blacklist-package, unpacks it and put's it to database.
+ *
+ * @param string $url 
+ *	url where new blacklist data is located (.tar.gz)
+ * @return boolean
+ */
+function sshkey_blacklist_upgrade_blacklist($url)
+{
+	// Did not succeed to do anything yet and returning false
+	return false;
+}

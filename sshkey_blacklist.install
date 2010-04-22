@@ -1,0 +1,35 @@
+<?php
+
+function sshkey_blacklist_install() {
+  drupal_install_schema('sshkey-blacklist');
+}
+
+function sshkey_blacklist_uninstall() {
+  drupal_uninstall_schema('sshkey-blacklist');
+}
+
+function sshkey_blacklist_schema() {
+  $schema = array();
+
+  $schema['sshkey-blacklist'] = array(
+    'description' => 'Blacklisted ssh-keys',
+    'fields' => array(
+      'fingerprint' => array(
+        'description' => 'The md5 hash for the public key',
+        'type' => 'char',
+        'length' => 32,
+        'not null' => TRUE,
+      ),
+      'type' => array(
+        'description' => 'Encryption (ex. "RSA-1024.le32".',
+        'type' => 'varchar',
+        'length' => 13,
+        'not null' => TRUE,
+        'default' => ''
+      ),
+    ),
+    'primary key' => array('fingerprint'),
+  );
+
+  return $schema;
+}
