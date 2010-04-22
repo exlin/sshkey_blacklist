@@ -1,5 +1,5 @@
 name = "SSH Key Blacklist"
 package = "SSH Keys"
-description = "Provides functionality to check if ssh-key is blacklisted"
+description = "Check's if entered SSH Key is blacklisted"
 core = "6.x"
 php = "5.x"
